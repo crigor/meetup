@@ -9,6 +9,10 @@ gem 'mysql2'
 
 gem 'json'
 
+gem 'hancock-client', :path => "/Users/crigor/projects/code/hancock-client"
+gem 'rack-client'
+gem 'thin'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

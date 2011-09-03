@@ -9,6 +9,15 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+class Sso < Hancock::Client::Middleware
+  disable :raise_errors
+  set 'sso_url', 'http://localhost:9292'
+
+  get '/hello' do
+    "hello session #{session.inspect}"
+  end
+end
+
 module Meetup
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -44,5 +53,6 @@ module Meetup
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.middleware.use Sso
   end
 end
