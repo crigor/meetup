@@ -11,7 +11,7 @@ gem 'json'
 
 gem 'hancock-client', :path => "/Users/crigor/projects/code/hancock-client"
 gem 'rack-client'
-gem 'thin'
+gem 'inherited_resources', '1.2.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
