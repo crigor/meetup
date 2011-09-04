@@ -1,0 +1,6 @@
+Set up your account
+
+<%= @user.inspect %>
+<%= form_for @user, :url => registrations_path do |f| %>
+  <%= f.submit %>
+<% end %>

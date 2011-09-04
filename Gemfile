@@ -32,3 +32,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+group :development do
+  gem "awesome_print"
+end
