@@ -1,3 +1,22 @@
 <h1><%= @event.title %></h1>
+<div class="row">
+  <div class="span12 columns">
 <p><%= @event.start_date %></p>
 <p><%= @event.description %></p>
+<p>
+<% if user_signed_in? && Rsvp.rsvpd?(@event, current_user) %>
+  <%= simple_format change_reply_text(@event, current_user) %>
+<% else %>
+  Are you attending? <%= link_to "Yes", reply_event_url(:reply => Rsvp::YES) %> <%= link_to "No", reply_event_url(:reply => Rsvp::NO) %> <%= link_to "Maybe", reply_event_url(:reply => Rsvp::MAYBE) %>
+<% end %>
+</p>
+  </div>
+  <div class="span4 columns">
+    <h3>People attending the meetup (<%= @event.attending_users.size %>)</h3>
+    <ul>
+      <% @event.attending_users.each do |user| %>
+      <li><%= user.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
