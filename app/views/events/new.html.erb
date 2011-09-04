@@ -1,1 +1,30 @@
-Create an event <%= session.inspect %>
+<%= form_for @event do |f| %>
+  <fieldset>
+    <legend>Create an event</legend>
+    <div class="clearfix">
+      <%= f.label "Title" %>
+      <div class="input">
+        <%= f.text_field :title, :class => "xlarge" %>
+      </div>
+    </div> <!-- /clearfix -->
+    <div class="clearfix">
+      <%= f.label "Description" %>
+      <div class="input">
+        <%= f.text_area :description, :rows => 5, :class => "xxlarge" %>
+      </div>
+    </div> <!-- /clearfix -->
+    <div class="clearfix">
+      <label>Date and time</label>
+      <div class="input">
+        <div class="inline-inputs">
+          <%= f.text_field :start_date, :class => "small" %>
+          <%= f.text_field :start_time, :class => "mini" %>
+        </div>
+      </div>
+    </div><!-- /clearfix -->
+
+    <div class="actions">
+      <button type="submit" class="btn primary">Create event</button>&nbsp;<button type="reset" class="btn">Cancel</button>
+    </div>
+  </fieldset>
+<% end %>

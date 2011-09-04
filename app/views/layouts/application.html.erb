@@ -5,10 +5,26 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.2.0.min.css">
 </head>
 <body>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <h3><a href="/">PinoyRB Meetup</a></h3>
+          <ul>
+            <li><a href=""><% if user_signed_in? %><%= current_user.email %><% else %><%= "Sign in" %><% end %></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<%= yield %>
+  <div class="container" style="margin-top: 60px">
+      <!--div class="alert-message error">
+        <a class="close" href="#">&times;</a>
+        <p><strong>Oh snap!</strong> Change this and that and try again.</p>
+      </div-->
+  <%= yield %>
+  </div>
 
-</body>
-</html>
+</body></html>
