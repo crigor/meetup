@@ -38,6 +38,8 @@ class ApplicationController < ActionController::Base
     return if !(session[:sso] && session[:sso][:user_id])
     if user = User.find_by_sso_user_id(session[:sso][:user_id])
       session[:user_id] = user.id
+    else
+      redirect_to new_registration_url
     end
   end
 end
