@@ -12,6 +12,7 @@ gem 'json'
 gem 'hancock-client', :git => 'git://github.com/crigor/hancock-client.git'
 gem 'rack-client'
 gem 'inherited_resources', '1.2.2'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
