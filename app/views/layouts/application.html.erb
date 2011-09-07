@@ -13,7 +13,16 @@
         <div class="container">
           <h3><a href="/">PinoyRB Meetup</a></h3>
           <ul>
-            <li><a href=""><% if user_signed_in? %><%= current_user.email %><% else %><%= "Sign in" %><% end %></a></li>
+            <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"><%= current_user.email %></a>
+              <ul class="dropdown-menu">
+                <li><a href="/sso/logout">Sign out</a></li>
+              </ul>
+            </li>
+            <% else %>
+            <li><a href="/sso/login">Sign in</a></li>
+            <% end %>
           </ul>
         </div>
       </div>

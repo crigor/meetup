@@ -32,4 +32,12 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def login_sso_user
+    return if session[:user_id]
+    return if !(session[:sso] && session[:sso][:user_id])
+    if user = User.find_by_sso_user_id(session[:sso][:user_id])
+      session[:user_id] = user.id
+    end
+  end
 end
