@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/crigor/projects/code/hancock-client
+GIT
+  remote: git://github.com/crigor/hancock-client.git
+  revision: 3b278935f27a89ab3be124cc9a3b42569e9aaf5d
   specs:
     hancock-client (0.0.8)
       haml

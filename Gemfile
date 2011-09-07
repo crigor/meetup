@@ -9,7 +9,7 @@ gem 'mysql2'
 
 gem 'json'
 
-gem 'hancock-client', :path => "/Users/crigor/projects/code/hancock-client"
+gem 'hancock-client', :git => 'git://github.com/crigor/hancock-client.git'
 gem 'rack-client'
 gem 'inherited_resources', '1.2.2'
 

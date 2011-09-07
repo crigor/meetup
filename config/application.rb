@@ -11,7 +11,11 @@ end
 
 class Sso < Hancock::Client::Middleware
   disable :raise_errors
-  set 'sso_url', 'http://localhost:9292'
+  if Rails.env.development?
+    set 'sso_url', 'http://localhost:9292'
+  else
+    set 'sso_url', 'http://login-staging.pinoyrb.org'
+  end
 
   get '/hello' do
     "hello session #{session.inspect}"
